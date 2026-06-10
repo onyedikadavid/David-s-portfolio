@@ -1,0 +1,59 @@
+.section {
+  padding: 5rem 8%;
+  background: var(--navy2);
+}
+.label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.title {
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: var(--ivory);
+  margin-bottom: 0.4rem;
+}
+.sub {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+.pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--slate);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2rem;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.85rem;
+  color: var(--ivory2);
+  transition: all 0.2s;
+  cursor: default;
+}
+.pill:hover {
+  border-color: rgba(124,58,237,0.5);
+  background: rgba(124,58,237,0.1);
+}
+.icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--violet), var(--violet2));
+  color: #fff;
+  flex-shrink: 0;
+}

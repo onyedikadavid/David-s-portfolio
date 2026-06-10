@@ -1,0 +1,168 @@
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 8%;
+  gap: 4rem;
+  position: relative;
+  overflow: hidden;
+  padding-top: 64px;
+}
+
+.glow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.eyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.eyebrow {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.eyebrowAi {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: rgba(167, 139, 250, 1);
+  text-transform: uppercase;
+}
+
+.dividerDot {
+  color: var(--muted2);
+  font-size: 0.9rem;
+}
+
+.name {
+  font-family: var(--f-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--ivory);
+  margin-bottom: 0.75rem;
+}
+
+.name span {
+  color: var(--violet);
+}
+
+.tagline {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 460px;
+  margin-bottom: 1.25rem;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.chip {
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 2rem;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(167, 139, 250, 0.9);
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Visual ── */
+.visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar {
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 3px solid rgba(201, 168, 76, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.avatarBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(124, 58, 237, 0.3), rgba(10, 15, 30, 0.8));
+}
+
+.initials {
+  font-family: var(--f-display);
+  font-size: 6rem;
+  font-weight: 800;
+  color: rgba(240, 237, 232, 0.15);
+  position: relative;
+  z-index: 1;
+}
+
+.ringOuter,
+.ringInner {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px dashed rgba(201, 168, 76, 0.2);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.ringOuter { width: 400px; height: 400px; }
+.ringInner { width: 460px; height: 460px; opacity: 0.4; }
+
+.badgeLeft,
+.badgeRight {
+  position: absolute;
+  background: var(--slate);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 12px;
+  padding: 0.65rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.8rem;
+  color: var(--ivory2);
+}
+
+.badgeLeft  { bottom: -10px; left: -30px; }
+.badgeRight { top: 30px; right: -20px; }
+
+.dotGreen { width: 8px; height: 8px; border-radius: 50%; background: #34d399; flex-shrink: 0; }
+.dotGold  { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .hero { grid-template-columns: 1fr; padding: 5rem 5% 3rem; }
+  .visual { display: none; }
+}

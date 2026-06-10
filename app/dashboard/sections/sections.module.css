@@ -1,0 +1,12 @@
+.header { margin-bottom: 2rem; }
+.title { font-family: var(--f-display); font-size: 1.5rem; font-weight: 700; color: var(--ivory); }
+.sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+.card { background: var(--slate); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--r); overflow: hidden; }
+.row { display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.row:last-child { border-bottom: none; }
+.label { font-size: 0.9rem; font-weight: 500; color: var(--ivory); }
+.rowSub { font-size: 0.78rem; color: var(--muted); margin-top: 0.15rem; }
+.toggle { width: 44px; height: 24px; background: var(--muted2); border-radius: 12px; position: relative; cursor: pointer; transition: background 0.2s; flex-shrink: 0; }
+.toggle.on { background: var(--violet); }
+.thumb { position: absolute; width: 18px; height: 18px; border-radius: 50%; background: #fff; top: 3px; left: 3px; transition: left 0.2s; }
+.toggle.on .thumb { left: 23px; }

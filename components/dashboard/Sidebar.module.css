@@ -1,0 +1,29 @@
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--navy2);
+  border-right: 1px solid rgba(255,255,255,0.07);
+  padding: 1.5rem 0;
+  height: calc(100vh - 64px);
+  position: sticky;
+  top: 64px;
+  overflow-y: auto;
+}
+.group { margin-bottom: 1.75rem; }
+.groupLabel { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; color: var(--muted2); text-transform: uppercase; padding: 0.4rem 1.5rem; margin-bottom: 0.25rem; }
+.item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 1.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-left: 2px solid transparent;
+  transition: all 0.18s;
+  text-decoration: none;
+}
+.item:hover { color: var(--ivory); background: rgba(255,255,255,0.04); }
+.item.active { color: var(--ivory); border-left-color: var(--violet); background: rgba(124,58,237,0.08); }
+.icon { font-size: 1rem; width: 20px; text-align: center; }
