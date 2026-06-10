@@ -1,1 +1,14 @@
 node_modules
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# Production build traces
+build/
+
+# Local env files
+.env*.local
+.env
