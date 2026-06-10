@@ -31,6 +31,16 @@ export default function Projects() {
                   <span key={t} className={styles.tag}>{t}</span>
                 ))}
               </div>
+              {p.link && (
+                <a
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.viewBtn}
+                >
+                  ↗ View Project
+                </a>
+              )}
             </div>
           </div>
         ))}

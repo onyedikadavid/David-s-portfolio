@@ -17,7 +17,7 @@ const EMOJIS = ["🚀","⚡","🎯","🌍","🛒","📋","🌤","🎨","🔥","�
 const blank = (): Omit<Project, "id"> => ({
   title: "", desc: "", tags: [], emoji: "🚀",
   color: CARD_COLORS[0].bg, bg: CARD_COLORS[0].base,
-  status: "Live", badge: "",
+  status: "Live", badge: "", link: "",
 });
 
 export default function ProjectsDash() {
@@ -45,7 +45,7 @@ export default function ProjectsDash() {
 
   function openEdit(p: Project) {
     setEditing(p.id);
-    setForm({ title: p.title, desc: p.desc, tags: p.tags, emoji: p.emoji, color: p.color, bg: p.bg, status: p.status, badge: p.badge ?? "" });
+    setForm({ title: p.title, desc: p.desc, tags: p.tags, emoji: p.emoji, color: p.color, bg: p.bg, status: p.status, badge: p.badge ?? "", link: p.link ?? "" });
     setTagsInput(p.tags.join(", "));
     const ci = CARD_COLORS.findIndex((c) => c.bg === p.color);
     setColorIdx(ci >= 0 ? ci : 0);
@@ -85,7 +85,7 @@ export default function ProjectsDash() {
       <div className={styles.tableCard}>
         <table className={styles.table}>
           <thead>
-            <tr><th>Project</th><th>Tags</th><th>Status</th><th>Actions</th></tr>
+            <tr><th>Project</th><th>Tags</th><th>Status</th><th>Link</th><th>Actions</th></tr>
           </thead>
           <tbody>
             {filtered.map((p) => (
@@ -94,6 +94,11 @@ export default function ProjectsDash() {
                 <td className={styles.tagCell}>{p.tags.join(", ")}</td>
                 <td>
                   <span className={p.status === "Live" ? styles.live : styles.draft}>{p.status}</span>
+                </td>
+                <td>
+                  {p.link
+                    ? <a href={p.link} target="_blank" rel="noopener noreferrer" className={styles.linkCell}>↗ View</a>
+                    : <span className={styles.noLink}>—</span>}
                 </td>
                 <td>
                   <button className="btn-sm btn-ghost" style={{ marginRight: "0.4rem" }} onClick={() => openEdit(p)}>Edit</button>
@@ -105,7 +110,6 @@ export default function ProjectsDash() {
         </table>
       </div>
 
-      {/* Modal */}
       {modal && (
         <div className={styles.overlay} onClick={(e) => { if (e.target === e.currentTarget) setModal(false); }}>
           <div className={styles.modal}>
@@ -138,6 +142,25 @@ export default function ProjectsDash() {
                     />
                   ))}
                 </div>
+              </div>
+              <div className={styles.fg}>
+                <label>Project Link</label>
+                <input
+                  className="form-control"
+                  value={form.link ?? ""}
+                  onChange={(e) => setForm({ ...form, link: e.target.value })}
+                  placeholder="https://github.com/yourname/project"
+                />
+                {form.link && (
+                  <a>
+                    href={form.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkPreview}
+                  
+                    ↗ Preview link
+                  </a>
+                )}
               </div>
               <div className={styles.fgRow}>
                 <div className={styles.fg}>

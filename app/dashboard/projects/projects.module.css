@@ -14,7 +14,6 @@
 .tagCell { font-size: 0.78rem; color: var(--muted); }
 .live { background: rgba(52,211,153,0.15); color: #34d399; border-radius: 2rem; padding: 0.2rem 0.7rem; font-size: 0.72rem; font-weight: 600; }
 .draft { background: rgba(156,163,175,0.15); color: #9ca3af; border-radius: 2rem; padding: 0.2rem 0.7rem; font-size: 0.72rem; font-weight: 600; }
-/* Modal */
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 200; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(4px); padding: 1rem; }
 .modal { background: var(--navy2); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--r); width: 100%; max-width: 560px; max-height: 90vh; overflow-y: auto; }
 .modalHead { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
@@ -33,3 +32,8 @@
 .swatch:hover { transform: scale(1.08); }
 .swatchSelected { outline: 2px solid var(--gold); outline-offset: 2px; }
 .modalActions { display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.25rem; }
+.linkCell { color: rgba(167,139,250,1); font-size: 0.8rem; font-weight: 500; text-decoration: none; }
+.linkCell:hover { text-decoration: underline; }
+.noLink { color: var(--muted2); font-size: 0.8rem; }
+.linkPreview { display: inline-block; margin-top: 0.45rem; font-size: 0.8rem; color: rgba(167,139,250,0.8); text-decoration: none; transition: color 0.15s; }
+.linkPreview:hover { color: rgba(167,139,250,1); text-decoration: underline; }
